@@ -11,7 +11,7 @@ class HelloWorldApp extends Component {
   }
 }
 
-export default class Bananas extends Component {
+class Bananas extends Component {
   render() {
     let pic = {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
@@ -19,5 +19,27 @@ export default class Bananas extends Component {
     return (
         <Image source={pic} style={{width: 400, height: 200}}/>
     );
+  }
+}
+
+class Greeting extends Component {
+  render() {
+    return (
+        <View style={{alignItems: 'center'}}>
+        <Text>Hello {this.props.name}!</Text>
+        </View>
+    )
+  }
+}
+
+export default class LotsOfGreetings extends Component {
+  render() {
+    return (
+        <View>
+        <Greeting name='Rexxar' />
+        <Greeting name='Jaina' />
+        <Greeting name='Valeera' />
+        </View>
+    )
   }
 }
